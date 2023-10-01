@@ -15,14 +15,13 @@ func main() {
 
 	fmt.Println(quote.Glass())
 
-	message, error := greetings.Hello("foo")
-	fmt.Println(message, error)
+	names := []string{"foo", "baz", "bar"}
 
-	m, err := greetings.Hello("")
+	messages, error := greetings.Hellos(names)
 
-	if err != nil {
-		log.Fatal(err)
+	if error != nil {
+		log.Fatal(error)
 	}
-
-	fmt.Println((m))
+	
+	fmt.Println(messages, error)
 }
